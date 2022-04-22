@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% set active_page = "index" -%}
+{% block body %}
+
+<section class="welcome">
+        <div class="bg">
+            <h1>Create, menage and enjoy your tasks!</h1>
+        </div>
+    </section>
+	
+    <main class="crud container">
+        <section class="datatable">
+            <h2>Create new task</h2>
+            <form class="row row--add" method="POST" action="https://desolate-spire-87391.herokuapp.com/v1/task/getAll" data-task-add-form>
+                <fieldset class="row-section input-section">
+                    <label class="input-label">Task name</label>
+                    <input type="text" name="title" placeholder="Insert a task name" required minlength="3" maxlength="300">
+                </fieldset>
+
+                <fieldset class="row-section input-section">
+                    <label class="input-label">Task content</label>
+                    <textarea name="content" placeholder="Insert task content" required minlength="3"></textarea>
+                </fieldset>
+
+                <fieldset class="row-section button-section">
+                    <button type="submit" data-task-add-button class="button">Add a task</button>
+                </fieldset>
+            </form>
+        </section>
+        <section class="datatable">
+            <h2>All you need to do is...</h2>
+            <div class="tasks-container" data-tasks-container></div>
+        </section>
+    </main>
+
+    <div class="template" data-row-template>
+        <form class="row" data-task-id="0">
+            <fieldset class="row-section input-section data-column" data-task-name-section>
+                <label class="input-label">
+                    Task name
+                </label>
+                <input type="text" name="title" placeholder="Insert a new task name" data-task-name-input required minlength="3">
+                <p class="field-value" data-task-name-paragraph></p>
+            </fieldset>
+
+            <fieldset class="row-section input-section" data-task-content-section>
+                <label class="input-label">
+                    Task content
+                </label>
+                <textarea name="title" placeholder="Insert new task content" data-task-content-input required minlength="3"></textarea>
+                <p class="field-value" data-task-content-paragraph></p>
+            </fieldset>
+
+            <div class="row-section-wrapper">
+                <fieldset class="row-section button-section">
+                    <button type="button" data-task-submit-update-button class="button button--editing ">Submit update</button>
+                    <button type="button" data-task-edit-abort-button class="button button--editing">Abort update</button>
+                    <button type="button" data-task-edit-button class="button">Edit</button>
+                    <button type="button" data-task-delete-button class="button">Delete</button>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+    <footer>&copy; Monika Zamysłowska, Agata Tafelska, Małgorzata Ziółek, Adam Kuchlewski</footer>	
+	
+	<script src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+	
+{% endblock %}

@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Saira Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+
+
+.welcome {
+  margin-bottom: 5vh;
+  text-align: center;
+  background-image: url("main_pic.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: fixed;
+  color: white;
+}
+
+.welcome .bg {
+  padding: 10vh 10vw;
+  background-color: rgba(0, 63, 114, .5);
+}
+
+.welcome h1 {
+  font-size: 45px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 10vh auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+
+input,
+textarea {
+  width: 100%;
+  padding: 5px;
+  margin: 0;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  margin-top: 30px;
+  font-size: 30px;
+  font-family: saira, sans-serif;
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  margin: 0;
+}
+
+.row-section-wrapper {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.row:first-of-type {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.row:last-of-type {
+  border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.row input,
+.row textarea {
+  display: none;
+}
+
+.row .button--editing {
+  display: none;
+}
+
+.row--editing input,
+.row--editing textarea {
+  display: block;
+}
+
+.row--editing .field-value {
+  display: none;
+}
+
+.row--editing .button {
+  display: none;
+}
+
+.row--editing .button--editing,
+.row--editing .button--card-creation {
+  display: block;
+}
+
+.row--add input,
+.row--add textarea {
+  display: block;
+}
+
+.field-value {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.row-section {
+  border: none;
+  margin: 0;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+.button-section {
+  margin-left: auto;
+  align-self: center;
+  flex-shrink: 1;
+  flex-grow: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-section {
+  width: 25%;
+}
+
+.input-section:nth-child(2) {
+  width: 50%;
+}
+
+.input-label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  margin: 5px auto;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.button {
+  color: #fff;
+  background-color: rgb(185, 226, 110);
+  ;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 8px 12px;
+  font-size: 12px;
+  min-width: 120px;
+  line-height: 1.25;
+  border-radius: 4px;
+}
+
+.select {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.tasks-container:empty {
+  position: relative;
+}
+
+.tasks-container:empty::after {
+  content: 'Currently, there are no tasks available.';
+}
+
+.template {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(124, 148, 161);
+  color: white;
+  font-family: saira, sans-serif;
+  text-align: right;
+  padding: 5px 10px;
+}
