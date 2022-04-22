@@ -7,7 +7,7 @@ spec:
     app: panda50-front
   ports:
   - protocol: "TCP"
-    port: 6000
+    port: 8080
     targetPort: 8080
   type: LoadBalancer
 
@@ -32,3 +32,5 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: acrdemo2ss-secret
