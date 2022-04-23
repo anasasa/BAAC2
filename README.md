@@ -1,4 +1,4 @@
-# Panda50 Fron-end
+# Panda50 Front-end
 Aplikacja front-end do zbudowania i uruchomienia w dockerze
 
 ##Wymagane zainstalowane na stacji
