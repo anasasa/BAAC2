@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "panda50cluster-2f2d"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "panda50cluster-2f2d"
+  template:
+    metadata:
+      labels:
+        app: "panda50cluster-2f2d"
+    spec:
+      containers:
+        - name: "panda50cluster-2f2d"
+          image: "panda50registry.azurecr.io/panda50cluster"
+          ports:
+          - containerPort: 80
